@@ -1,0 +1,10 @@
+@model IEnumerable<Instituicao>
+@{ ViewData["Title"] = "Instituições"; }
+<div class="d-flex justify-content-between align-items-center mb-3"><h1>Instituições</h1><a class="btn btn-primary" asp-action="Create">Nova instituição</a></div>
+@if (TempData["Mensagem"] is string mensagem) { <div class="alert alert-success">@mensagem</div> }
+@if (!Model.Any()) { <div class="alert alert-info">Nenhuma instituição cadastrada.</div> }
+else {
+<table class="table table-striped table-hover"><thead><tr><th>Código</th><th>Nome</th><th>Endereço</th><th class="text-end">Ações</th></tr></thead><tbody>
+@foreach (var instituicao in Model) { <tr><td>@instituicao.InstituicaoID</td><td>@instituicao.Nome</td><td>@instituicao.Endereco</td><td class="text-end text-nowrap"><a asp-action="Details" asp-route-id="@instituicao.InstituicaoID">Detalhes</a> | <a asp-action="Edit" asp-route-id="@instituicao.InstituicaoID">Editar</a> | <a asp-action="Delete" asp-route-id="@instituicao.InstituicaoID" class="text-danger">Excluir</a></td></tr> }
+</tbody></table>
+}

@@ -1,0 +1,15 @@
+@model Aluno
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<input type="hidden" asp-for="AlunoID" />
+<div class="row">
+    <div class="col-md-6 mb-3"><label asp-for="Nome" class="form-label"></label><input asp-for="Nome" class="form-control" /><span asp-validation-for="Nome" class="text-danger"></span></div>
+    <div class="col-md-6 mb-3"><label asp-for="Email" class="form-label"></label><input asp-for="Email" class="form-control" /><span asp-validation-for="Email" class="text-danger"></span></div>
+    <div class="col-md-4 mb-3"><label asp-for="Telefone" class="form-label"></label><input asp-for="Telefone" class="form-control" /><span asp-validation-for="Telefone" class="text-danger"></span></div>
+    <div class="col-md-8 mb-3"><label asp-for="Endereco" class="form-label"></label><input asp-for="Endereco" class="form-control" /><span asp-validation-for="Endereco" class="text-danger"></span></div>
+    <div class="col-md-4 mb-3"><label asp-for="Complemento" class="form-label"></label><input asp-for="Complemento" class="form-control" /></div>
+    <div class="col-md-4 mb-3"><label asp-for="Bairro" class="form-label"></label><input asp-for="Bairro" class="form-control" /></div>
+    <div class="col-md-4 mb-3"><label asp-for="Municipio" class="form-label"></label><input asp-for="Municipio" class="form-control" /></div>
+    <div class="col-md-2 mb-3"><label asp-for="Uf" class="form-label"></label><input asp-for="Uf" class="form-control" maxlength="2" /></div>
+    <div class="col-md-3 mb-3"><label asp-for="Cep" class="form-label"></label><input asp-for="Cep" class="form-control" /></div>
+</div>
+<div class="form-actions"><button type="submit" class="btn btn-primary">Salvar</button><a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a></div>

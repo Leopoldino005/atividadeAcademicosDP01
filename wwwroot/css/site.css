@@ -1,0 +1,4 @@
+body { min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1; }
+.table td, .table th { vertical-align: middle; }
+.form-actions { display: flex; gap: .5rem; margin-top: 1.25rem; }

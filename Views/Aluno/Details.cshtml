@@ -1,0 +1,7 @@
+@model Aluno
+@{ ViewData["Title"] = "Detalhes do aluno"; }
+<h1>Detalhes do aluno</h1><hr />
+<dl class="row">
+@foreach (var item in new (string Label, string? Value)[] { ("Código", Model.AlunoID.ToString()), ("Nome", Model.Nome), ("E-mail", Model.Email), ("Telefone", Model.Telefone), ("Endereço", Model.Endereco), ("Complemento", Model.Complemento), ("Bairro", Model.Bairro), ("Município", Model.Municipio), ("UF", Model.Uf), ("CEP", Model.Cep) }) { <dt class="col-sm-3">@item.Label</dt><dd class="col-sm-9">@(string.IsNullOrWhiteSpace(item.Value) ? "—" : item.Value)</dd> }
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.AlunoID" class="btn btn-primary">Editar</a> <a asp-action="Index" class="btn btn-outline-secondary">Voltar</a>
